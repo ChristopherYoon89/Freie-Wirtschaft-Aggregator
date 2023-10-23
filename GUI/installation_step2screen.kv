@@ -1,0 +1,91 @@
+#:kivy 2.2.1
+
+<InstallationStepTwoScreen>:
+
+
+	MDBoxLayout:
+		orientation: "vertical"
+		height: root.height
+		padding: dp(25), dp(25), dp(25), dp(25)
+		spacing: dp(25)
+
+		MDLabel:
+			text: "Select main folder"
+			halign: "center"
+			theme_text_color: "Custom"
+    		text_color: 1, 1, 1, 1
+			font_style: "H4"
+
+		MDIcon:
+			icon: "folder-outline"
+			color: 1, 1, 1, 1
+			pos_hint: {"center_x": 0.5, "center_y": 0.5}
+		
+		MDRectangleFlatButton:
+			text: "Select folder"
+			md_bg_color: 0, 0, 0, 1
+			pos_hint: {"center_x": 0.5, "center_y": 0.5}
+			theme_text_color: "Custom"
+    		text_color: "white"
+			on_press:
+				root.open_file_chooser()
+
+
+		MDLabel:
+			text: "Select the folder, in which your program is located. The main directory allows you to access the input and output data of the program. During the installation process a couple of subfolders and files will be created, which will be stored in your main directory."
+			halign: "center"
+			theme_text_color: "Custom"
+    		text_color: 1, 1, 1, 1
+			font_style: "Body1"
+
+
+		MDFloatLayout:
+
+			MDBoxLayout:
+				id: boxlayout_slide_points
+				orientation: "horizontal"
+				padding: dp(40), dp(25), dp(25), dp(25)
+				spacing: dp(45)
+				pos_hint: {"center_y": 0.15}
+
+				MDIcon:
+					icon: "circle-outline"
+					color: "#FB5302"
+					font_size : 10
+
+				MDIcon:
+					icon: "circle-outline"
+					color: 1, 1, 1, 1
+					font_size : 10
+
+				MDIcon:
+					icon: "circle-outline"
+					color: 1, 1, 1, 1
+					font_size : 10
+
+				MDIcon:
+					icon: "circle-outline"
+					color: 1, 1, 1, 1
+					font_size : 10
+
+
+			MDRectangleFlatButton:
+				text: "Back"
+				md_bg_color: 0, 0, 0, 1
+				pos_hint: {"center_x": 0.8, "center_y": 0.2}
+				theme_text_color: "Custom"
+    			text_color: "white"
+				on_press:
+					app.ipsm.get_screen("installationhomescreen").nav_change_to_step1_screen("installation_step_one_screen")
+
+
+			MDRectangleFlatButton:
+				id: step2_next_buttion
+				text: "Next"
+				md_bg_color: "#FB5302"
+				pos_hint: {"center_x": 0.9, "center_y": 0.2}
+				theme_text_color: "Custom"
+    			text_color: "white"
+				on_press:
+					root.save_folder()
+					

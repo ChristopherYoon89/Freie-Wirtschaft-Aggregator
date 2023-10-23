@@ -1,0 +1,40 @@
+#:kivy 2.2.1
+
+
+<InstallationStepOneScreen>:
+
+
+	MDBoxLayout:
+		orientation: "vertical"
+		height: root.height
+		padding: dp(25), dp(25), dp(25), dp(25)
+		spacing: dp(25)
+
+		MDLabel:
+			text: "Welcome to Kraken-News Technologies!"
+			halign: "center"
+			theme_text_color: "Custom"
+    		text_color: 1, 1, 1, 1
+			font_style: "H3"
+
+		Image:
+			source: "assets/kraken-icon.png"
+
+		MDLabel:
+			text: "Before you can start crawling the web, please complete the installation process and configure the program. Click on 'Start installation' to enter the configuration guide."
+			halign: "center"
+			theme_text_color: "Custom"
+    		text_color: 1, 1, 1, 1
+			font_style: "Body1"
+
+
+		MDFloatLayout:
+
+			MDRectangleFlatButton:
+				text: "Start installation"
+				md_bg_color: "#FB5302"
+				pos_hint: {"center_x": 0.9, "center_y": 0.2}
+				theme_text_color: "Custom"
+    			text_color: "white"
+				on_press:
+					app.ipsm.get_screen("installationhomescreen").nav_change_to_step1_screen("installation_step_two_screen")

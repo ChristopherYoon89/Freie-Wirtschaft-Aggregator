@@ -1,0 +1,93 @@
+#:kivy 2.2.1
+
+<InstallationStepFiveScreen>:
+
+
+	MDBoxLayout:
+		id: boxlayout_step_five
+		orientation: "vertical"
+		height: root.height
+		padding: dp(25), dp(25), dp(25), dp(25)
+		spacing: dp(25)
+			
+
+		MDLabel:
+			text: "Download algorithms and other files"
+			halign: "center"
+			theme_text_color: "Custom"
+    		text_color: 1, 1, 1, 1
+			font_style: "H4"
+
+		MDIcon:
+			icon: "robot-outline"
+			color: 1, 1, 1, 1
+			pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+		
+		MDRectangleFlatButton:
+			text: "Start download"
+			md_bg_color: 0, 0, 0, 1
+			pos_hint: {"center_x": 0.5, "center_y": 0.5}
+			theme_text_color: "Custom"
+    		text_color: "white"
+			on_press:
+				root.callback_download_algorithms()
+
+
+		MDLabel:
+			text: "In the last step you have to download the algorithms and various datasets that are necessary to operate the data crawler and the pipeline."
+			halign: "center"
+			theme_text_color: "Custom"
+    		text_color: 1, 1, 1, 1
+			font_style: "Body1"
+
+
+		MDFloatLayout:
+
+			MDBoxLayout:
+				id: boxlayout_slide_points
+				orientation: "horizontal"
+				padding: dp(40), dp(25), dp(25), dp(25)
+				spacing: dp(45)
+				pos_hint: {"center_y": 0.15}
+
+				MDIcon:
+					icon: "circle-outline"
+					color: 1, 1, 1, 1
+					font_size : 10
+
+				MDIcon:
+					icon: "circle-outline"
+					color: 1, 1, 1, 1
+					font_size : 10
+				
+				MDIcon:
+					icon: "circle-outline"
+					color: 1, 1, 1, 1
+					font_size : 10
+
+				MDIcon:
+					icon: "circle-outline"
+					color: "#FB5302"
+					font_size : 10
+
+			MDRectangleFlatButton:
+				text: "Back"
+				md_bg_color: 0, 0, 0, 1
+				pos_hint: {"center_x": 0.75, "center_y": 0.2}
+				theme_text_color: "Custom"
+    			text_color: "white"
+				on_press:
+					app.ipsm.get_screen("installationhomescreen").nav_change_to_step4_screen("installation_step_four_screen")
+
+
+			MDRectangleFlatButton:
+				text: "Finish installation"
+				md_bg_color: "#FB5302"
+				pos_hint: {"center_x": 0.9, "center_y": 0.2}
+				theme_text_color: "Custom"
+    			text_color: "white"
+
+				on_press:
+					app.ipsm.get_screen("installationhomescreen").logout_action()
+				

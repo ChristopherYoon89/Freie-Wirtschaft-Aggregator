@@ -1,0 +1,223 @@
+#:kivy 2.2.1
+
+<HomeScreen>:
+    md_bg_color: 0.1, 0.1, 0.1, 1
+
+    MDNavigationLayout:
+		id: top_layout
+
+        MDScreenManager:
+            id: screen_manager
+
+            MDScreen:
+
+                ActionBar:
+                    pos_hint: {'top':1}
+                    
+                    ActionView:
+                        use_separator: True
+                        pos_hint: {"pos_x": 0} 
+
+                        ActionPrevious:
+                            title: 'Kraken Technologies'
+                            with_previous: False
+                            size_hint_x: None
+                            width: 0
+                            app_icon_width: 0.1
+
+                        ActionButton:
+                            text: ''
+                            icon: "assets/kraken-icon.png"
+                        
+                        ActionButton:
+                            text: 'GUI Data Management'
+                        
+                        ActionGroup:
+                            text: 'Configure' 
+                            mode: 'spinner'
+                            dropdown_width: 170
+
+                            ActionButton:
+                                text: 'Configuration manager'
+                                halign: "left"
+
+                            ActionButton:
+                                text: 'Update webdriver'
+
+                            ActionButton:
+                                text: 'Update Browser'
+
+                            ActionButton:
+                                text: 'Update algorithms'
+                        
+                        ActionGroup:
+                            text: 'Sources' 
+                            mode: 'spinner'
+                            dropdown_width: 170
+                            #width: dp(1000)
+
+                            ActionButton:
+                                text: 'Create new dataset'
+
+                            ActionButton:
+                                text: 'Create xlsx template'
+
+                            ActionButton:
+                                text: 'Import xlsx file'
+
+                        ActionGroup:
+                            text: 'Pipeline' 
+                            mode: 'spinner'
+                            #width: dp(1000)
+
+                            ActionButton:
+                                text: 'Tool1'
+
+                            ActionButton:
+                                text: 'Tool2'
+
+                            ActionButton:
+                                text: 'Tool3'
+
+                            ActionButton:
+                                text: 'Tool4'
+
+                MDCard:  
+                    id: icon_buttons
+                    md_bg_color: 69/255, 69/255, 69/255, 1
+                    padding: dp(0), dp(10)
+                    #pos_hint: {"center_y": 0.905, "center_x": 0.5}
+                    pos_hint: {"top":0.95}
+                    size_hint_y: None
+                    height: dp(90)
+
+                    MDBoxLayout:
+                        orientation:"horizontal"
+                        pos_hint: {"center_y": 0.5}
+                        padding: dp(20), dp(10)
+                        size_hint: None, None
+                        height: dp(80)
+                        spacing: dp(40)
+
+                        MDIcon:
+                            icon: "menu-left"
+                            font_size: 40
+                            size_hint: 0.2,0.2
+                            pos_hint: {"center_y": 0.50, "center_x": 1}    
+
+                        MDSeparator:
+                            orientation:'vertical'
+                            height: "10dp"
+
+                        BoxLayout:
+                            orientation:"vertical"
+                            padding: dp(0), dp(10), dp(10), dp(10) 
+                            pos_hint: {"center_y": 0.5, "center_x": 0}
+                        
+                            MDIconButton:
+                                icon: "assets/imac.png"
+                                icon_size: dp(35)
+                                radius: [4, 4, 4, 4]
+                                pos_hint: {"center_y": 0.60, "center_x": 0}
+                                on_release: root.nav_change_to_datacrawler_screen("datacrawlerscreen")
+
+                            MDLabel:
+                                text: "Home"
+                                halign: "center"
+                                font_size: 13
+                                size_hint_x: None
+                                width: dp(65)
+                                pos_hint: {"center_y": 0, "center_x": 0}
+                                color: 1, 1, 1, 1
+
+                        MDSeparator:
+                            orientation:'vertical'
+                            height: "10dp"
+
+                        BoxLayout:
+                            orientation:"vertical"
+                            padding: dp(0), dp(10), dp(10), dp(10) 
+                            pos_hint: {"center_y": 0.5, "center_x": 0}
+                        
+                            MDIconButton:
+                                icon: "assets/icon-crawler.png"
+                                icon_size: dp(35)
+                                radius: [4, 4, 4, 4]
+                                pos_hint: {"center_y": 0.60, "center_x": 0}
+                                on_release: root.nav_change_to_datacrawler_screen("datacrawlerscreen")
+
+                            MDLabel:
+                                text: "Crawler"
+                                halign: "center"
+                                font_size: 13
+                                size_hint_x: None
+                                width: dp(65)
+                                pos_hint: {"center_y": 0, "center_x": 0}
+                                color: 1, 1, 1, 1
+
+                        MDSeparator:
+                            orientation:'vertical'
+                            height: "10dp"
+
+                        BoxLayout:
+                            orientation:"vertical"
+                            padding: dp(0), dp(10), dp(10), dp(10) 
+                            pos_hint: {"center_y": 0.5, "center_x": 0}
+                        
+                            MDIconButton:
+                                icon: "assets/icon-pipeline.png"
+                                icon_size: dp(35)
+                                radius: [4, 4, 4, 4]
+                                pos_hint: {"center_y": 0.60, "center_x": 0}
+                                on_release: root.nav_change_to_datacrawler_screen("datacrawlerscreen")
+
+                            MDLabel:
+                                text: "Pipeline"
+                                halign: "center"
+                                font_size: 13
+                                size_hint_x: None
+                                width: dp(65)
+                                pos_hint: {"center_y": 0.3, "center_x": 0}
+                                color: 1, 1, 1, 1
+
+                        MDSeparator:
+                            orientation:'vertical'
+                            height: "10dp"
+
+                        BoxLayout:
+                            orientation:"vertical"
+                            padding: dp(5), dp(10), dp(10), dp(10) 
+                            pos_hint: {"center_y": 0.5, "center_x": 0}
+                        
+                            MDIconButton:
+                                icon: "assets/coolrobot.png"
+                                icon_size: dp(35)
+                                radius: [4, 4, 4, 4]
+                                pos_hint: {"center_y": 0.60, "center_x": 0}
+                                on_release: root.nav_change_to_datacrawler_screen("datacrawlerscreen")
+
+                            MDLabel:
+                                text: "Configure"
+                                halign: "center"
+                                font_size: 13
+                                size_hint_x: None
+                                width: dp(65)
+                                pos_hint: {"center_y": 0.3, "center_x": 0}
+                                color: 1, 1, 1, 1
+
+                        MDSeparator:
+                            orientation:'vertical'
+                            height: "10dp"
+
+                        MDIcon:
+                            icon: "menu-right"
+                            font_size: 40
+                            size_hint: 0.2,0.2
+                            pos_hint: {"center_y": 0.50, "center_x": 1}
+
+                MDFloatLayout:  
+                    id: screen_content
+                    size_hint_y: None
+                    height: self.parent.height
+                    #pos_hint: {"top": 0.87}  # Adjust this value to align with the bottom of the MDTopAppBar
+                    size_hint: 1, 0.87

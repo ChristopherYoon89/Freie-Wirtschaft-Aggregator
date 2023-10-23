@@ -1,0 +1,91 @@
+#:kivy 2.2.1
+
+<InstallationStepFourScreen>:
+
+
+	MDBoxLayout:
+		id: boxlayout_step_four
+		orientation: "vertical"
+		height: root.height
+		padding: dp(25), dp(25), dp(25), dp(25)
+		spacing: dp(25)
+
+		MDLabel:
+			text: "Download and install Chrome webdriver"
+			halign: "center"
+			theme_text_color: "Custom"
+    		text_color: 1, 1, 1, 1
+			font_style: "H4"
+
+		MDIcon:
+			icon: "google-chrome"
+			color: 1, 1, 1, 1
+			pos_hint: {"center_x": 0.5, "center_y": 0.5}
+
+		
+		MDRectangleFlatButton:
+			text: "Download Chrome webdriver"
+			md_bg_color: 0, 0, 0, 1
+			pos_hint: {"center_x": 0.5, "center_y": 0.5}
+			theme_text_color: "Custom"
+    		text_color: "white"
+			on_press:
+				root.callback_download_google_chrome_webdriver()
+
+
+		MDLabel:
+			text: "In this step you have to download the Chrome webdriver. The webdriver is an interface that allows the Kraken Crawler to interact with the Chrome Browser and automate the crawling process. The downloaded file will be stored in your main directory. Please make sure that the webdriver version corresponds with the version of your Chrome browser."
+			halign: "center"
+			theme_text_color: "Custom"
+    		text_color: 1, 1, 1, 1
+			font_style: "Body1"
+
+
+		MDFloatLayout:
+
+			MDBoxLayout:
+				id: boxlayout_slide_points
+				orientation: "horizontal"
+				padding: dp(40), dp(25), dp(25), dp(25)
+				spacing: dp(45)
+				pos_hint: {"center_y": 0.15}
+
+				MDIcon:
+					icon: "circle-outline"
+					color: 1, 1, 1, 1
+					font_size : 10
+
+				MDIcon:
+					icon: "circle-outline"
+					color: 1, 1, 1, 1
+					font_size : 10
+
+				MDIcon:
+					icon: "circle-outline"
+					color: "#FB5302"
+					font_size : 10
+
+				MDIcon:
+					icon: "circle-outline"
+					color: 1, 1, 1, 1
+					font_size : 10
+
+			MDRectangleFlatButton:
+				text: "Back"
+				md_bg_color: 0, 0, 0, 1
+				pos_hint: {"center_x": 0.8, "center_y": 0.2}
+				theme_text_color: "Custom"
+    			text_color: "white"
+				on_press:
+					app.ipsm.get_screen("installationhomescreen").nav_change_to_step3_screen("installation_step_three_screen")
+
+
+			MDRectangleFlatButton:
+				text: "Next"
+				md_bg_color: "#FB5302"
+				pos_hint: {"center_x": 0.9, "center_y": 0.2}
+				theme_text_color: "Custom"
+    			text_color: "white"
+				on_press:
+					app.ipsm.get_screen("installationhomescreen").nav_change_to_step5_screen("installation_step_five_screen")
+				

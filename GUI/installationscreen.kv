@@ -1,0 +1,102 @@
+#:kivy 2.2.1
+
+<HomeScreen>:
+
+    MDNavigationLayout:
+		id: top_layout
+
+        MDScreenManager:
+            id: screen_manager
+
+            MDScreen:
+
+                ActionBar:
+                    pos_hint: {'top':1}
+                    
+                    ActionView:
+                        use_separator: True
+                        pos_hint: {"pos_x": 0}
+
+                        ActionPrevious:
+                            title: 'Kraken Technologies'
+                            with_previous: False
+                            size_hint_x: None
+                            width: 0
+                            app_icon_width: 0.1
+
+
+                        ActionButton:
+                            text: ''
+                            icon: "assets/kraken-icon.png"
+
+                        
+                        ActionButton:
+                            text: 'Kraken-Crawler'
+
+                        
+                        ActionGroup:
+                            text: 'File' 
+                            mode: 'spinner'
+                            #width: dp(1000)
+
+                            ActionButton:
+                                text: 'Tool1'
+
+                            ActionButton:
+                                text: 'Tool2'
+
+                            ActionButton:
+                                text: 'Tool3'
+
+                            ActionButton:
+                                text: 'Tool4'
+
+
+                        
+                        ActionGroup:
+                            text: 'Edit' 
+                            mode: 'spinner'
+                            #width: dp(1000)
+
+                            ActionButton:
+                                text: 'Tool1'
+
+                            ActionButton:
+                                text: 'Tool2'
+
+                            ActionButton:
+                                text: 'Tool3'
+
+                            ActionButton:
+                                text: 'Tool4'
+
+
+
+
+                        ActionGroup:
+                            text: 'Tools' 
+                            mode: 'spinner'
+                            #width: dp(1000)
+
+                            ActionButton:
+                                text: 'Tool1'
+
+                            ActionButton:
+                                text: 'Tool2'
+
+                            ActionButton:
+                                text: 'Tool3'
+
+                            ActionButton:
+                                text: 'Tool4'
+
+
+                MDFloatLayout:  
+                    id: screen_content
+                    size_hint_y: None
+                    
+                    
+                    #pos_hint: {"top": 0.87}  # Adjust this value to align with the bottom of the MDTopAppBar
+                    #size_hint: 1, 0.87
+
+       

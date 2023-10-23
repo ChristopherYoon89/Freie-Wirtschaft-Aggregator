@@ -1,0 +1,465 @@
+#:kivy 2.2.1
+
+<ThreeLineAvatarIconListItem>:
+	id: list_item
+	on_size:
+        self.ids._right_container.width = container.width
+        self.ids._right_container.x = container.width
+	
+	IconLeftWidget:
+		icon: "delete-outline"
+		theme_icon_color: "Custom"
+		icon_color: 152/255, 152/255, 152/255, 1
+		on_release: root.delete_item()
+
+	RightContainer:
+		id: container
+
+		IconButtonTooltips:
+			icon: "assets/menu-up.png"
+			tooltip_text: "Move up"
+			on_release: root.move_up()
+
+		IconButtonTooltips:
+			icon: "assets/menu-down.png"
+			tooltip_text: "Move down"
+			on_release: root.move_down()
+
+
+
+<IconButtonTooltips@MDIconButton+MDTooltip>
+
+
+<ContentShowDetails>
+	size_hint_y: None
+    height: "220dp"
+	
+
+	MDBoxLayout:
+		orientation: "vertical"
+		spacing: "12dp"
+
+
+		MDBoxLayout:
+			orientation: "horizontal"
+			spacing: dp(15)
+
+			MDLabel:
+				text: "Name:"
+				color: "#FB5302"
+				halign: "right"
+				pos_hint: {"center_y": 0.3}
+
+			MDTextField:
+				id: crawling_sources_name_text
+				mode: "fill"
+				hint_text: ""
+				fill_color_normal: 50/255, 50/255, 50/255, 1
+				md_bg_color: 50/255, 50/255, 50/255, 1
+				size_hint_x: 1.8
+				hint_text_color_normal: 1, 1, 1, 1
+				hint_text_color_focus: "#FB5302"
+				text_color_normal: 1, 1, 1, 1
+		
+		MDBoxLayout:
+			orientation: "horizontal"
+			spacing: dp(15)
+
+			MDLabel:
+				text: "URL:"
+				color: "#FB5302"
+				halign: "right"
+				pos_hint: {"center_y": 0.3}
+
+			MDTextField:
+				id: crawling_sources_url_text
+				mode: "fill"
+				fill_color_normal: 50/255, 50/255, 50/255, 1
+				md_bg_color: 50/255, 50/255, 50/255, 1
+				size_hint_x: 1.8
+				hint_text_color_normal: 1, 1, 1, 1
+				hint_text_color_focus: "#FB5302"
+				text_color_normal: 1, 1, 1, 1
+
+		MDBoxLayout:
+			orientation: "horizontal"
+			spacing: dp(15)
+
+			MDLabel:
+				text: "Number of scrolls:"
+				color: "#FB5302"
+				halign: "right"
+				pos_hint: {"center_y": 0.3}
+
+			MDTextField:
+				id: crawling_sources_scroll_label
+				mode: "fill"
+				fill_color_normal: 50/255, 50/255, 50/255, 1
+				md_bg_color: 50/255, 50/255, 50/255, 1
+				size_hint_x: 1.8
+				hint_text_color_normal: 1, 1, 1, 1
+				hint_text_color_focus: "#FB5302"
+				text_color_normal: 1, 1, 1, 1
+
+
+<ContentAddSource>
+	size_hint_y: None
+    height: "220dp"
+	id: content_add_source
+
+	MDBoxLayout:
+		orientation: "vertical"
+		spacing: "12dp"
+
+
+		MDBoxLayout:
+			orientation: "horizontal"
+			spacing: dp(15)
+
+			MDLabel:
+				text: "Name:"
+				color: "#FB5302"
+				halign: "right"
+				pos_hint: {"center_y": 0.25}
+
+			MDTextField:
+				id: crawling_add_source_name_text
+				mode: "fill"
+				hint_text: ""
+				fill_color_normal: 50/255, 50/255, 50/255, 1
+				md_bg_color: 50/255, 50/255, 50/255, 1
+				size_hint_x: 1.8
+				hint_text_color_normal: 1, 1, 1, 1
+				hint_text_color_focus: "#FB5302"
+
+		
+		MDBoxLayout:
+			orientation: "horizontal"
+			spacing: dp(15)
+
+			MDLabel:
+				text: "URL:"
+				color: "#FB5302"
+				halign: "right"
+				pos_hint: {"center_y": 0.25}
+
+			MDTextField:
+				id: crawling_add_source_url_text
+				mode: "fill"
+				hint_text: ""
+				fill_color_normal: 50/255, 50/255, 50/255, 1
+				md_bg_color: 50/255, 50/255, 50/255, 1
+				size_hint_x: 1.8
+				hint_text_color_normal: 1, 1, 1, 1
+				hint_text_color_focus: "#FB5302"
+
+		MDBoxLayout:
+			orientation: "horizontal"
+			spacing: dp(15)
+
+			MDLabel:
+				text: "Number of scrolls:"
+				color: "#FB5302"
+				halign: "right"
+				pos_hint: {"center_y": 0.25}
+
+			MDTextField:
+				id: crawling_add_source_scrolls_text
+				mode: "fill"
+				hint_text: ""
+				fill_color_normal: 50/255, 50/255, 50/255, 1
+				md_bg_color: 50/255, 50/255, 50/255, 1
+				size_hint_x: 1.8
+				hint_text_color_normal: 1, 1, 1, 1
+				hint_text_color_focus: "#FB5302"
+
+
+
+<ContentCreateSourceDataset>
+	size_hint_y: None
+    height: "220dp"
+	id: content_create_source_dataset
+
+	MDBoxLayout:
+		orientation: "vertical"
+		spacing: "12dp"
+
+		MDBoxLayout:
+			orientation: "horizontal"
+			spacing: dp(15)
+
+			MDLabel:
+				text: "Name:"
+				color: "#FB5302"
+				halign: "right"
+				pos_hint: {"center_y": 0.46}
+
+			MDTextField:
+				id: crawling_create_source_dataset_name_text
+				mode: "fill"
+				hint_text: ""
+				fill_color_normal: 50/255, 50/255, 50/255, 1
+				md_bg_color: 50/255, 50/255, 50/255, 1
+				size_hint_x: 1.8
+				hint_text_color_normal: 1, 1, 1, 1
+				hint_text_color_focus: "#FB5302"
+				pos_hint: {"center_y": 0.5}
+
+
+
+
+<ContentCreateExcelTemplate>
+	size_hint_y: None
+    height: "220dp"
+	id: content_create_excel_template
+
+	MDBoxLayout:
+		orientation: "vertical"
+		spacing: "12dp"
+
+		MDBoxLayout:
+			orientation: "horizontal"
+			spacing: dp(15)
+
+			MDLabel:
+				text: "Name:"
+				color: "#FB5302"
+				halign: "right"
+				pos_hint: {"center_y": 0.46}
+
+			MDTextField:
+				id: crawling_create_excel_template_name_text
+				mode: "fill"
+				hint_text: ""
+				fill_color_normal: 50/255, 50/255, 50/255, 1
+				md_bg_color: 50/255, 50/255, 50/255, 1
+				size_hint_x: 1.8
+				hint_text_color_normal: 1, 1, 1, 1
+				hint_text_color_focus: "#FB5302"
+				pos_hint: {"center_y": 0.5}
+		
+		
+
+<DataCrawlerScreen>:
+
+	MDBoxLayout:
+        id: id_settings_screen_top
+		padding: dp(0), dp(160), dp(0), dp(25)
+		size_hint_y: None
+		height: self.parent.height 
+
+		MDGridLayout:
+			cols: 2
+			size_hint_y: None
+			height: self.parent.height - dp(80)
+			spacing: dp(30)
+
+			MDFloatLayout:
+				#padding: dp(35), dp(35), dp(35), dp(35)
+				#md_bg_color: 0, 0, 0, 1
+				md_bg_color: 60/255, 60/255, 60/255, 1
+				size_hint_y: None
+				height: self.parent.height
+				pos_hint: {"center_y": 0.5, "center_x": 0.5}
+    			
+
+				MDCard:
+					pos_hint: {"center_y": 1, "center_x": 0.5}
+					size_hint_y: None
+					height: dp(50)
+					padding: dp(10), dp(0)
+					md_bg_color: 34/255, 34/255, 34/255, 1
+					radius: [15, 15, 0, 0]
+					spacing: dp(20)
+
+					MDLabel:
+						id: dataset_name_label
+						text: "Crawling Sources"
+						halign: "center"
+						font_size: 13
+						size_hint_x: None
+						width: dp(130)
+						pos_hint: {"center_y": 0.5, "center_x": 0}
+						color: 1, 1, 1, 1
+
+					MDSeparator:
+						orientation:'vertical'
+						height: "10dp"
+
+					MDBoxLayout:
+						orientation: "horizontal"
+						padding: dp(0), dp(0)
+						pos_hint: {"center_y": 0.5, "center_x": 0}
+
+						IconButtonTooltips:
+							icon: "plus-thick"
+							tooltip_text: "Add source to dataset"
+							font_size: 12
+							icon_size: dp(20)
+							radius: [4, 4, 4, 4]
+							pos_hint: {"center_y": 0.5}
+							tooltip_bg_color: 0, 0, 0, 1
+							theme_icon_color: "Custom"
+    						icon_color: 1, 1, 1, 1
+							on_release: root.show_add_source_dialog()
+
+
+						IconButtonTooltips:
+							icon: "folder-upload-outline"
+							tooltip_text: "Open dataset"
+							icon_size: dp(20)
+							radius: [4, 4, 4, 4]
+							pos_hint: {"center_y": 0.5}
+							theme_icon_color: "Custom"
+    						icon_color: 1, 1, 1, 1
+							tooltip_bg_color: 0, 0, 0, 1
+							on_release: root.open_dataset_file_chooser()
+
+
+						IconButtonTooltips:
+							icon: "playlist-plus"
+							tooltip_text: "Create new dataset"
+							font_size: 12
+							icon_size: dp(20)
+							radius: [4, 4, 4, 4]
+							pos_hint: {"center_y": 0.5}
+							tooltip_bg_color: 0, 0, 0, 1
+							theme_icon_color: "Custom"
+    						icon_color: 1, 1, 1, 1
+							on_release: root.show_create_source_dataset_dialog()
+							#on_release: root.nav_change_to_datacrawler_screen("datacrawlerscreen")
+
+
+						IconButtonTooltips:
+							icon: "microsoft-excel"
+							tooltip_text: "Create new excel template"
+							font_size: 12
+							icon_size: dp(20)
+							radius: [4, 4, 4, 4]
+							pos_hint: {"center_y": 0.5}
+							tooltip_bg_color: 0, 0, 0, 1
+							theme_icon_color: "Custom"
+    						icon_color: 1, 1, 1, 1
+							on_release: root.show_create_excel_template_dialog()
+							#on_release: root.nav_change_to_datacrawler_screen("datacrawlerscreen")
+
+
+						IconButtonTooltips:
+							icon: "database-import-outline"
+							tooltip_text: "Convert xlsx to json"
+							icon_size: dp(20)
+							radius: [4, 4, 4, 4]
+							pos_hint: {"center_y": 0.5}
+							theme_icon_color: "Custom"
+    						icon_color: 1, 1, 1, 1
+							tooltip_bg_color: 0, 0, 0, 1
+							on_release: root.convert_dataset_file_chooser()
+
+
+						Widget:
+        					size_hint_x: 1
+
+						MDRectangleFlatButton:
+							#icon: "spider"
+							text: "Start Crawling"
+							font_size: 12
+							halign: "right"
+							pos_hint: {"center_y": 0.5}
+							on_release: root.callback_start_crawling_process()
+
+				
+				MDAnchorLayout:
+					#orientation: "vertical"
+					#pos_hint: {"center_y": 0.5, "center_x": 0.5}
+					id: container_scroll_queue_layout
+					anchor_x: "left"
+					anchor_y: "top"
+					size_hint_y: None
+					height: self.parent.height - dp(10)
+
+					MDScrollView:
+						id: container_scroll_queue_list
+						size_hint_y: None
+						size_hint_x: None
+						#pos_hint: {"center_y": 0.5, "center_x": 0.5}
+						height: self.parent.height - dp(60)
+						width: self.parent.width
+
+						MDList:
+							id: container_queue_list
+							size_hint_y: None
+							padding: dp(15), dp(5), dp(15), dp(5)
+							size_hint_x: None
+							width: self.parent.width
+							#pos_hint: {"center_y": 1, "center_x": 0.5}
+							height: self.parent.height - dp(20)
+							#md_bg_color: 255/255, 69/255, 69/255, 1
+
+					
+			MDFloatLayout:
+				padding: dp(35), dp(35)
+				pos_hint: {"center_y": 0.5, "center_x": 0.5}
+				md_bg_color: 0, 0, 0, 1
+
+
+				MDCard:
+					pos_hint: {"center_y": 1, "center_x": 0.5}
+					size_hint_y: None
+					height: dp(50)
+					padding: dp(10), dp(0)
+					md_bg_color: 34/255, 34/255, 34/255, 1
+					radius: [15, 15, 0, 0]
+
+					MDLabel:
+						text: "Crawling Output"
+						halign: "center"
+						font_size: 13
+						size_hint_x: None
+						width: dp(100)
+						pos_hint: {"center_y": 0.5, "center_x": 0}
+						color: 1, 1, 1, 1
+
+					MDSeparator:
+						orientation:'vertical'
+						height: "10dp"
+
+					MDBoxLayout:
+						orientation: "horizontal"
+						padding: dp(0), dp(0)
+						pos_hint: {"center_y": 0.5, "center_x": 0}
+
+						Widget:
+        					size_hint_x: 1
+
+						MDRectangleFlatButton:
+							#icon: "spider"
+							text: "Cancel Crawling"
+							line_color: 251/255, 83/255, 2/255, 1
+							text_color: 251/255, 83/255, 2/255, 1 
+							font_size: 12
+							halign: "right"
+							pos_hint: {"center_y": 0.5}
+							on_release: root.callback_start_crawling_process()
+
+				
+				ScrollView:
+					id: output_scroll_view
+					size_hint: None, None
+					#size_hint_x: None
+					do_scroll_x: False
+					#size_hint_y: 0.95
+					pos_hint: {"center_y": 0.5, "center_x": 0.5}
+					width: self.parent.width - dp(40)
+					height: self.parent.height - dp(60)
+					
+					BoxLayout:
+						id: output_box_layout
+						orientation: 'vertical'
+						spacing: 0
+						padding: 0
+						size_hint_y: None
+						height: self.minimum_height
+
+					
+
+								
